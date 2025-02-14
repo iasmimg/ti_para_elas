@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+<body>
+    <h1>Açoes</h1>
+    <p><a href="{% url 'cadastrar_acao' %}">Cadastrar</a></p>
+    <p>Listagem de Ações:</p>
+    {% for acao in todas_acoes %}
+    <div>
+
+    <p>Título: {{acao.titulo}}</p>
+    <p>Descrição: {{acao.descricao}}</p>
+    <p>Autor: {{acao.autor}}</p>
+    <p>Tipo: {{acao.tipo}}</p>
+    <p>Imagem: <img src='media/{{acao.imagem}}' alt='' /></p>
+    <p>Link Geral: {{acao.linkgeral}}</p>
+    <p>Link Mídia Social: {{acao.linkms}}</p>
+    <p><a href="{% url 'editar_acao' acao.id %}">EDITAR</a></p>
+    
+    </div>
+    {% empty %}
+    <p>Não existe nenuma ação cadastrada </p>
+    {% endfor %}
+</body>
+</html>
