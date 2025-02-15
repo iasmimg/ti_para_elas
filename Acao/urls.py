@@ -18,13 +18,14 @@ from django.contrib import admin
 from django.urls import path
 from django.conf import settings
 from django.conf.urls.static import static
-from core.views import listar_acao, cadastrar_acao, editar_acao
+from core.views import listar_acao, cadastrar_acao, editar_acao, remover_acao
 
 
 urlpatterns = [
     path('acao/', listar_acao, name="listar_acao"),
     path('acao_cadastrar/', cadastrar_acao, name="cadastrar_acao"),
     path('acao_editar/<int:id>/', editar_acao, name="editar_acao"),
+    path('acao_remover/<int:id>/', remover_acao, name="remover_acao"),
     path('admin/', admin.site.urls),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

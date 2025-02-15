@@ -23,6 +23,7 @@
     <p>Link Geral: {{acao.linkgeral}}</p>
     <p>Link Mídia Social: {{acao.linkms}}</p>
     <p><a href="{% url 'editar_acao' acao.id %}">EDITAR</a></p>
+    <p><a href="{% url 'remover_acao' acao.id %}">REMOVER</a></p>
     
     </div>
     {% empty %}

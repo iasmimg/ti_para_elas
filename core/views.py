@@ -35,3 +35,9 @@ def editar_acao(request, id):
     }
 
     return render(request, 'acao_cadastrar.html', contexto)
+
+def remover_acao(request, id):
+    acao = Acao.objects.get(pk=id)
+    acao.delete()
+
+    return redirect('listar_acao')
